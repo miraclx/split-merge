@@ -1,6 +1,6 @@
 {
   "name": "split-merge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Efficient, flexible data stream chunker and merger",
   "main": "dist/index.js",
   "types": "typings/index.d.ts",
