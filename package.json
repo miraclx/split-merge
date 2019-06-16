@@ -72,5 +72,8 @@
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "stringd": "^1.5.0"
+  }
 }
