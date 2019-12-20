@@ -41,11 +41,21 @@ export interface ReadChunkerSpec {
   appendOverflow: boolean,
 }
 
+export interface ChunkData {
+  index: number,
+  total: number,
+  number: number,
+  _index: string,
+  _number: string,
+  chunkSize: number,
+  finalChunk: boolean,
+}
+
 export class ReadChunker extends TransformWithMiddleWare {
   spec = { total: number, splitSize: number, lastSplitSize: number, numberOfParts: number, }
   bytesRead: number
   constructor(spec: ReadChunkerSpec): this
-  fiss(output: string | string[] | Buffer | Buffer[] | NodeJS.ReadableStream, outputManipulator: (file: string) => string): NodeJS.WritableStream
+  fiss(output: string | string[] | Buffer | Buffer[] | NodeJS.WritableStream, outputManipulator?: (file: string, chunkData: ChunkData) => string): NodeJS.WritableStream
 }
 
 export class ReadMerger extends TransformWithMiddleWare {
